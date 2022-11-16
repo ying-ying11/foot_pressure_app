@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/drawable/background_device_info.xml" value="0.38229166666666664" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/drawable/click_effect.xml" value="0.38229166666666664" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/drawable/round_button.xml" value="0.38229166666666664" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/layout/activity_data_viewer.xml" value="0.36614583333333334" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/layout/activity_file_data_viewer.xml" value="0.36614583333333334" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/layout/activity_file_manager.xml" value="0.36614583333333334" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/layout/activity_scan_device.xml" value="0.36614583333333334" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/layout/fragment_data_page.xml" value="0.36614583333333334" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/layout/fragment_device_info.xml" value="0.36614583333333334" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/layout/fragment_emg.xml" value="0.36614583333333334" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/layout/fragment_emg_viewer.xml" value="0.36614583333333334" />
+        <entry key="..\:/Flyn/Android/sarcopenia_project/app/src/main/res/layout/fragment_file_data.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/drawable-anydpi/ic_add.xml" value="0.253" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/drawable-v24/button1.xml" value="0.253" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/drawable/background_device_info.xml" value="0.253" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/layout/activity_connect_ble.xml" value="0.23489583333333333" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/layout/activity_data_viewer.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/layout/activity_file_data_viewer.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/layout/activity_file_manager.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/layout/activity_main.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/layout/activity_mode_select.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/layout/activity_scan_device.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/layout/fragment_data_page.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/layout/fragment_device_info.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/Desktop/app1/foot_pressure_app1/app/src/main/res/layout/fragment_file_data.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/Desktop/foot_pressure_app1/app/src/main/res/layout/activity_data_viewer.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/Desktop/foot_pressure_app1/app/src/main/res/layout/fragment_data_page.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/user/Desktop/foot_pressure_app1/app/src/main/res/layout/fragment_file_data.xml" value="0.24947916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.24947916666666667" />
+      </ProjectState>
+    </option>
+  </component>
+</project>
