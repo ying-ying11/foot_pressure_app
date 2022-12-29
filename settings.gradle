@@ -7,7 +7,7 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "sarcopenia_project"
+rootProject.name = "foot_pressure_app"
 include ':app'
 
 includeBuild '..\\fc_message'

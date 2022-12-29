@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -25,10 +26,24 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/data_descriptor"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/file_viewer_emg_chart"
-            app:layout_constraintBottom_toTopOf="@id/data_descriptor" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/file_viewer_emg_chart" />
+
+        <TextView
+            android:id="@+id/analysis_data"
+            android:layout_width="145dp"
+            android:layout_height="187dp"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/data_descriptor"
+            app:layout_constraintHorizontal_bias="0.936"
+            app:layout_constraintStart_toStartOf="@+id/data_descriptor"
+            app:layout_constraintTop_toTopOf="@+id/data_descriptor"
+            app:layout_constraintVertical_bias="0.722" />
 
         <TextView
             android:id="@+id/data_descriptor"
@@ -36,10 +51,11 @@
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sampling_rate"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sampling_rate" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

@@ -16,6 +16,7 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
+import com.github.psambit9791.jdsp.signal.peaks.Peak
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.ConcurrentHashMap
@@ -31,6 +32,7 @@ class DataPage(private val min: Float, private val max: Float,
 
     private lateinit var chart: LineChart
     private lateinit var samplingRateText: TextView
+    private lateinit var analysisData: TextView
     private lateinit var describeText: TextView
     private var hasInit = false
     private var prevTime = 0L
@@ -46,12 +48,18 @@ class DataPage(private val min: Float, private val max: Float,
         }
     }
 
-    fun updateSamplingRate(dataAmount: Int) {
+    fun updateSamplingRate(dataAmount: Int, peak_value: Double, peak_time: Double) {
         if (context == null) return
         if (requireActivity() !is DataViewer) return
         val time = (requireActivity() as DataViewer).time
         val samplingRate: Double = dataAmount / time.toDouble() * 1000
-        samplingRateText.text = getString(R.string.sampling_rate, samplingRate)
+//        val peak_value: DoubleArray = peak
+//        val peaks=DoubleArray(peak.to)
+        samplingRateText.text = getString(R.string.sampling_rate, samplingRate, peak_value, peak_time)
+    }
+
+    fun updataAnalysisData(velocity: Double, step_duration: Double, peak_average: Double){
+        analysisData.text = getString(R.string.analysis_data, velocity, step_duration, peak_average)
     }
 
     private fun addDataToChart(time: Long, value: Array<Float>) {
@@ -126,6 +134,7 @@ class DataPage(private val min: Float, private val max: Float,
         val view = inflater.inflate(R.layout.fragment_data_page, container, false)
         chart = view.findViewById(R.id.file_viewer_emg_chart)
         samplingRateText = view.findViewById(R.id.sampling_rate)
+        analysisData = view.findViewById(R.id.analysis_data)
         describeText = view.findViewById(R.id.data_descriptor)
         initChart()
         initDataSet()

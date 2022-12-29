@@ -18,8 +18,8 @@
     <string name="emg_describe">ADC1: %.2f g\nADC2: %.2f g\nADC3 %.2f g\nADC4: %.2f g\nADC5: %.2f g\nADC6: %.2f g</string>
     <string name="acc_describe">x: %.2f g\ny: %.2f g\nz: %.2f g</string>
     <string name="gyr_describe">x: %.2f rad/s\ny: %.2f rad/s\nz: %.2f rad/s\n</string>
-    <string name="sampling_rate">Sampling Rate: %.2f</string>
-
+    <string name="sampling_rate">Sampling Rate: %.2f \n peak: %.2f \n peak_time: %.2f</string>
+    <string name="analysis_data">velocity: %.2f \n stap_duration: %.2f \n peak_average: %.2f</string>
     <string name="file_detail">Size: %s</string>
     <string name="check_saving">是否儲存檔案</string>
     <string name="sava_completed">檔案儲存完畢</string>
