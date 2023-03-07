@@ -15,7 +15,7 @@
     <string name="acc_tab">ACC</string>
     <string name="gyr_tab">GYR</string>
 
-    <string name="emg_describe">ADC1: %.2f g\nADC2: %.2f g\nADC3 %.2f g\nADC4: %.2f g\nADC5: %.2f g\nADC6: %.2f g</string>
+    <string name="emg_describe">ADC0: %.2f g\nADC1: %.2f g\nADC2 %.2f g\nADC3: %.2f g\nADC4: %.2f g\nADC5: %.2f g</string>
     <string name="acc_describe">x: %.2f g\ny: %.2f g\nz: %.2f g</string>
     <string name="gyr_describe">x: %.2f rad/s\ny: %.2f rad/s\nz: %.2f rad/s\n</string>
     <string name="sampling_rate">Sampling Rate: %.2f \n peak: %.2f \n peak_time: %.2f</string>
