@@ -107,19 +107,19 @@ class DataViewer: AppCompatActivity() {
 //                        val arch_gram = calculatePa(calibrate(emgTransform(adc[4]), 4),4)-400
 //                        val hm_gram = calculatePa(calibrate(emgTransform(adc[5]), 5),5)+300
 //
-                        val ha_gram = calculatePa(calibrate(emgTransform(adc[0]), 0),0)-300// female left
-                        val lt_gram = calculatePa(calibrate(emgTransform(adc[1]), 1),1)-250
-                        val m1_gram = calculatePa(calibrate(emgTransform(adc[2]), 2),2)-800
-                        val m5_gram = calculatePa(calibrate(emgTransform(adc[3]), 3),3)
-                        val arch_gram = calculatePa(calibrate(emgTransform(adc[4]), 4),4)-50
-                        val hm_gram = calculatePa(calibrate(emgTransform(adc[5]), 5),5)-300
+//                        val ha_gram = calculatePa(calibrate(emgTransform(adc[0]), 0),0)// female left
+//                        val lt_gram = calculatePa(calibrate(emgTransform(adc[1]), 1),1)
+//                        val m1_gram = calculatePa(calibrate(emgTransform(adc[2]), 2),2)
+//                        val m5_gram = calculatePa(calibrate(emgTransform(adc[3]), 3),3)
+//                        val arch_gram = calculatePa(calibrate(emgTransform(adc[4]), 4),4)
+//                        val hm_gram = calculatePa(calibrate(emgTransform(adc[5]), 5),5)
 
-//                        val ha_gram = calibrate(emgTransform(adc[0]), 0)
-//                        val lt_gram = calibrate(emgTransform(adc[1]), 1)
-//                        val m1_gram = calibrate(emgTransform(adc[2]), 2)
-//                        val m5_gram = calibrate(emgTransform(adc[3]), 3)
-//                        val arch_gram = calibrate(emgTransform(adc[4]), 4)
-//                        val hm_gram = calibrate(emgTransform(adc[5]), 5)
+                        val ha_gram = calibrate(emgTransform(adc[0]), 0) //calibrate
+                        val lt_gram = calibrate(emgTransform(adc[1]), 1)
+                        val m1_gram = calibrate(emgTransform(adc[2]), 2)
+                        val m5_gram = calibrate(emgTransform(adc[3]), 3)
+                        val arch_gram = calibrate(emgTransform(adc[4]), 4)
+                        val hm_gram = calibrate(emgTransform(adc[5]), 5)
                         Log.i("test", adc.toList().toString())
 
 
@@ -171,7 +171,7 @@ class DataViewer: AppCompatActivity() {
                                             i++
                                             if(i>=3){
                                                 isFatigue = true
-                                                Toast.makeText(this@DataViewer,"You will Fatigue",Toast.LENGTH_LONG).show()
+                                                Toast.makeText(this@DataViewer,"Fatigue Detected",Toast.LENGTH_LONG).show()
                                                 vibrator = getSystemService(Service.VIBRATOR_SERVICE) as Vibrator
                                                 vibrationEffect = VibrationEffect.createOneShot(1000, 150)
                                                 vibrator.vibrate(vibrationEffect)
@@ -261,10 +261,18 @@ class DataViewer: AppCompatActivity() {
 //    private val weight = arrayOf(0.0016, 0.0015, 0.0015, 0.0016, 0.0015,0.0018) // male right
 //    private val bias = arrayOf(-0.4404, -1.1027, -0.7006, -0.693, -0.8453, -0.3081)
 
-    private val weight = arrayOf(0.0004, 0.0003, 0.0004, 0.0004, 0.0004, 0.0002) //  female left
-    private val bias = arrayOf(0.0214, 0.0206, 0.0523, 0.0085, 0.0171, 0.0351)
+//    private val weight = arrayOf(0.0004, 0.0003, 0.0004, 0.0004, 0.0004, 0.0002) //  female left
+//    private val bias = arrayOf(0.0214, 0.0206, 0.0523, 0.0085, 0.0171, 0.0351)
 //    private val weight = arrayOf(0.0004, 0.0003, 0.0003, 0.0003, 0.0003,0.0004) // female right
 //    private val bias = arrayOf(0.0578, 0.0367, 0.0538, 0.053, 0.0634, -0.0621)
+
+    private val weight = arrayOf(0.0016, 0.0017, 0.0012, 0.0013, 0.0015, 0.0015) //  new female left
+    private val bias = arrayOf(-0.1774, 0.0176, -0.0905, 0.0562, -0.0002, 0.0273)
+//    private val weight = arrayOf(0.0017, 0.0016, 0.0012, 0.0017, 0.0018,0.0017) // new female right
+//    private val bias = arrayOf(0.0492, -0.0048, 0.0744, 0.1325, -0.0666, 0.0711)
+
+//    private val weight = arrayOf(1, 1, 1, 1, 1,1) // calibrate
+//    private val bias = arrayOf(0, 0, 0, 0, 0, 0)
 
 //    private var mutableListOfDouble: MutableList<Double> = mutableListOf()
     private var datalist: LinkedList<Double> = LinkedList()
@@ -272,8 +280,7 @@ class DataViewer: AppCompatActivity() {
     private var PressureAverageList: LinkedList<Double> = LinkedList()
 //    private var storageOldData: MutableList<Double> = mutableListOf()
 
-//    private val weight = arrayOf(1, 1, 1, 1, 1,1) // calibrate
-//    private val bias = arrayOf(0, 0, 0, 0, 0, 0)
+
 
     private val area = arrayOf(0.05, 0.15, 0.1, 0.1, 0.3, 0.3)
     private fun calibrate(adc: Double, index: Int): Double =
