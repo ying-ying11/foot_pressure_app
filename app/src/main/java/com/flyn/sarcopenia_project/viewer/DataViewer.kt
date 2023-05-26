@@ -1,8 +1,10 @@
 package com.flyn.sarcopenia_project.viewer
 
 
+
 import android.app.Service
 import android.content.*
+import android.content.Context.BIND_AUTO_CREATE
 import android.os.Bundle
 import android.os.IBinder
 import android.os.VibrationEffect
@@ -13,7 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil.setContentView
-import androidx.fragment.app.Fragment
+
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.flyn.sarcopenia_project.MainActivity
@@ -59,7 +61,7 @@ class DataViewer: AppCompatActivity() {
 
         override fun getItemCount(): Int = fragments.size
 
-        override fun createFragment(position: Int): Fragment = fragments[position]
+        override fun createFragment(position: Int): androidx.fragment.app.Fragment = fragments[position]
 
     }
 
@@ -86,12 +88,12 @@ class DataViewer: AppCompatActivity() {
 //                        Log.i("adc",adc.toList().toString())
 
 
-//                        val ha_gram = calculatePa(calibrate(emgTransform(adc[0]), 0)+260,0)// male right
-//                        val lt_gram = calculatePa(calibrate(emgTransform(adc[1]), 1)+730,1)
-//                        val m1_gram = calculatePa(calibrate(emgTransform(adc[2]), 2)+460,2)
-//                        val m5_gram = calculatePa(calibrate(emgTransform(adc[3]), 3)+430,3)
-//                        val arch_gram = calculatePa(calibrate(emgTransform(adc[4]), 4)+565,4)
-//                        val hm_gram = calculatePa(calibrate(emgTransform(adc[5]), 5)+145,5)
+                        val ha_gram = calculatePa(calibrate(emgTransform(adc[0]), 0)+260,0)// male right
+                        val lt_gram = calculatePa(calibrate(emgTransform(adc[1]), 1)+730,1)
+                        val m1_gram = calculatePa(calibrate(emgTransform(adc[2]), 2)+460,2)
+                        val m5_gram = calculatePa(calibrate(emgTransform(adc[3]), 3)+430,3)
+                        val arch_gram = calculatePa(calibrate(emgTransform(adc[4]), 4)+565,4)
+                        val hm_gram = calculatePa(calibrate(emgTransform(adc[5]), 5)+145,5)
 //
 //                        val ha_gram = calculatePa(calibrate(emgTransform(adc[0]), 0)+95,0)// male left
 //                        val lt_gram = calculatePa(calibrate(emgTransform(adc[1]), 1)+390,1)
@@ -100,12 +102,12 @@ class DataViewer: AppCompatActivity() {
 //                        val arch_gram = calculatePa(calibrate(emgTransform(adc[4]), 4)+350,4)
 //                        val hm_gram = calculatePa(calibrate(emgTransform(adc[5]), 5)+100,5)
 
-//                        val ha_gram = calculatePa(calibrate(emgTransform(adc[0]), 0),0)-1500// female right
-//                        val lt_gram = calculatePa(calibrate(emgTransform(adc[1]), 1),1)-600
-//                        val m1_gram = calculatePa(calibrate(emgTransform(adc[2]), 2),2)-1200
-//                        val m5_gram = calculatePa(calibrate(emgTransform(adc[3]), 3),3)-1200
-//                        val arch_gram = calculatePa(calibrate(emgTransform(adc[4]), 4),4)-400
-//                        val hm_gram = calculatePa(calibrate(emgTransform(adc[5]), 5),5)+300
+//                        val ha_gram = calculatePa(calibrate(emgTransform(adc[0]), 0),0)-0// female right
+//                        val lt_gram = calculatePa(calibrate(emgTransform(adc[1]), 1),1)-0
+//                        val m1_gram = calculatePa(calibrate(emgTransform(adc[2]), 2),2)-0
+//                        val m5_gram = calculatePa(calibrate(emgTransform(adc[3]), 3),3)-0
+//                        val arch_gram = calculatePa(calibrate(emgTransform(adc[4]), 4),4)-0
+//                        val hm_gram = calculatePa(calibrate(emgTransform(adc[5]), 5),5)+0
 //
 //                        val ha_gram = calculatePa(calibrate(emgTransform(adc[0]), 0),0)// female left
 //                        val lt_gram = calculatePa(calibrate(emgTransform(adc[1]), 1),1)
@@ -114,12 +116,12 @@ class DataViewer: AppCompatActivity() {
 //                        val arch_gram = calculatePa(calibrate(emgTransform(adc[4]), 4),4)
 //                        val hm_gram = calculatePa(calibrate(emgTransform(adc[5]), 5),5)
 
-                        val ha_gram = calibrate(emgTransform(adc[0]), 0) //calibrate
-                        val lt_gram = calibrate(emgTransform(adc[1]), 1)
-                        val m1_gram = calibrate(emgTransform(adc[2]), 2)
-                        val m5_gram = calibrate(emgTransform(adc[3]), 3)
-                        val arch_gram = calibrate(emgTransform(adc[4]), 4)
-                        val hm_gram = calibrate(emgTransform(adc[5]), 5)
+//                        val ha_gram = calibrate(emgTransform(adc[0]), 0) //calibrate
+//                        val lt_gram = calibrate(emgTransform(adc[1]), 1)
+//                        val m1_gram = calibrate(emgTransform(adc[2]), 2)
+//                        val m5_gram = calibrate(emgTransform(adc[3]), 3)
+//                        val arch_gram = calibrate(emgTransform(adc[4]), 4)
+//                        val hm_gram = calibrate(emgTransform(adc[5]), 5)
                         Log.i("test", adc.toList().toString())
 
 
@@ -266,13 +268,18 @@ class DataViewer: AppCompatActivity() {
 //    private val weight = arrayOf(0.0004, 0.0003, 0.0003, 0.0003, 0.0003,0.0004) // female right
 //    private val bias = arrayOf(0.0578, 0.0367, 0.0538, 0.053, 0.0634, -0.0621)
 
-    private val weight = arrayOf(0.0016, 0.0017, 0.0012, 0.0013, 0.0015, 0.0015) //  new female left
-    private val bias = arrayOf(-0.1774, 0.0176, -0.0905, 0.0562, -0.0002, 0.0273)
+//    private val weight = arrayOf(0.0016, 0.0017, 0.0012, 0.0013, 0.0015, 0.0015) //  new female left
+//    private val bias = arrayOf(-0.1774, 0.0176, -0.0905, 0.0562, -0.0002, 0.0273)
 //    private val weight = arrayOf(0.0017, 0.0016, 0.0012, 0.0017, 0.0018,0.0017) // new female right
 //    private val bias = arrayOf(0.0492, -0.0048, 0.0744, 0.1325, -0.0666, 0.0711)
 
 //    private val weight = arrayOf(1, 1, 1, 1, 1,1) // calibrate
 //    private val bias = arrayOf(0, 0, 0, 0, 0, 0)
+//    private val weight = arrayOf(0.0014, 0.0015, 0.0016, 0.0014, 0.0014, 0.0014) //  新的male left   1.行走實驗時要打開 對應上面的Code。 2.如果校正要檢查 這裡要打開，打開對應的腳
+//    private val bias = arrayOf(-0.1262, -0.6176, -0.1515, -0.8115, -0.4956, -0.2994)
+    private val weight = arrayOf(0.0015, 0.0016, 0.0014, 0.0015, 0.0014,0.0016) //   新的的male right    1.行走實驗時要打開 對應上面的Code。 2.如果校正要檢查 這裡要打開，打開對應的腳
+    private val bias = arrayOf(-0.4037, -0.5995, -0.6422, -0.6353, -0.7749, -0.0776)
+
 
 //    private var mutableListOfDouble: MutableList<Double> = mutableListOf()
     private var datalist: LinkedList<Double> = LinkedList()
